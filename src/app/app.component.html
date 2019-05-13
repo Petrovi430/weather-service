@@ -1,0 +1,7 @@
+<br>
+<h1 class="title text-center">Welcome to {{title}}!</h1>
+<br>
+<app-search-city (cityName)="updateWeather($event)"></app-search-city>
+<br>
+<app-show-weather [weatherInCity]="data" [isLoaded]="isLoaded" [isError]="isError" [errorMessage]="errorMessage"></app-show-weather>
+<br>

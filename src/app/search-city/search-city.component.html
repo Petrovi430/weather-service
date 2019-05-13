@@ -1,0 +1,26 @@
+<section class="section">
+  <div class="container">
+    <h3 class="title text-center">Search city</h3>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <div class="form-group">
+        <label class="control-label" for="city-name">Enter city name</label>
+        <input
+          type="text"
+          id="city-name"
+          class="form-control"
+          #name="ngModel"
+          name="name"
+          ngModel
+          (input)="valueChange($event.target.value)"
+          list="cities"
+          autocomplete="off"
+        >
+        <datalist id="cities" *ngIf="searchAutoCity.length > 1 && showList">
+          <option *ngFor="let city of searchAutoCity | slice:0:5">{{city.name}}</option>
+        </datalist>
+      </div>
+      <button [disabled]="f.value.name == ''" type="submit" class="btn btn-primary pull-right">Search city</button>
+    </form>
+  </div>
+</section>
+

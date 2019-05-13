@@ -1,0 +1,53 @@
+<section class="section">
+  <div class="container"  *ngIf="!isLoaded">
+    <app-loader></app-loader>
+  </div>
+  <div  @fade class="container"  *ngIf="isLoaded">
+    <div *ngIf="isError">
+      Error:
+      {{errorMessage}}
+    </div>
+    <div *ngIf="!isError">
+      <h1 class="title text-center">Weather in {{weatherInCity.name}}</h1>
+      <br>
+      <div class="list-group">
+        <div class="list-group-item list-group-item-action active">
+          <h5 class="list-group-item-heading">Weather</h5>
+          <p class="list-group-item-text">
+            Group of weather parameters: {{weatherInCity.weather[0].main}}. Weather condition within the group: {{weatherInCity.weather[0].description}}.
+            Weather icon: <img src="https://openweathermap.org/img/w/{{weatherInCity.weather[0].icon}}.png" alt="Weather icon">
+          </p>
+        </div>
+        <div class="list-group-item list-group-item-action">
+          <h5 class="list-group-item-heading">Geographic coordinates</h5>
+          <p class="list-group-item-text">Longitude: {{weatherInCity.coord.lon}}, latitude: {{weatherInCity.coord.lat}}.</p>
+        </div>
+        <div class="list-group-item list-group-item-action active">
+          <h5 class="list-group-item-heading">Main</h5>
+          <p class="list-group-item-text">Temperature: {{weatherInCity.main.temp}}*C, pressure: {{weatherInCity.main.pressure}} hPa, humidity: {{weatherInCity.main.humidity}}%</p>
+        </div>
+        <div class="list-group-item list-group-item-action">
+          <h5 class="list-group-item-heading">Wind</h5>
+          <p class="list-group-item-text">Wind speed: {{weatherInCity.wind.speed}} meter/sec, wind direction: {{weatherInCity.wind.deg}} degrees.</p>
+        </div>
+        <div class="list-group-item list-group-item-action active">
+          <h5 class="list-group-item-heading">Clouds</h5>
+          <p class="list-group-item-text">Cloudiness: {{weatherInCity.clouds.all}}%.</p>
+        </div>
+        <div class="list-group-item list-group-item-action">
+          <h5 class="list-group-item-heading">Time</h5>
+          <p class="list-group-item-text">Time of data calculation: {{weatherInCity.dt | date: 'MMM d, y, h:mm:ss a'}}. Country: {{weatherInCity.sys.country}}.</p>
+        </div>
+        <div class="list-group-item list-group-item-action active" *ngIf="weatherInCity.rain">
+          <h5 class="list-group-item-heading">Rain</h5>
+          <p class="list-group-item-text">Rain volume for the last 1 hour: {{weatherInCity.rain['1h']}} mm. Rain volume for the last 3 hour: {{weatherInCity.rain['3h']}} mm.</p>
+        </div>
+        <div class="list-group-item list-group-item-action active" *ngIf="weatherInCity.snow">
+          <h5 class="list-group-item-heading">Snow</h5>
+          <p class="list-group-item-text">Snow volume for the last 1 hour: {{weatherInCity.snow['1h']}} mm. Snow volume for the last 3 hour: {{weatherInCity.snow['3h']}} mm.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
