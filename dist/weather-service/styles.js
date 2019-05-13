@@ -621,9 +621,9 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\User\Desktop\devchalenge\Tasks_Frontend_Online_Round_FA5iNHF\Angular Task\weather-service\src\styles.css */"./src/styles.css");
-__webpack_require__(/*! C:\Users\User\Desktop\devchalenge\Tasks_Frontend_Online_Round_FA5iNHF\Angular Task\weather-service\src\assets\vendor.css */"./src/assets/vendor.css");
-module.exports = __webpack_require__(/*! C:\Users\User\Desktop\devchalenge\Tasks_Frontend_Online_Round_FA5iNHF\Angular Task\weather-service\src\assets\theme.css */"./src/assets/theme.css");
+__webpack_require__(/*! F:\angular4\weather-service\weather-service\src\styles.css */"./src/styles.css");
+__webpack_require__(/*! F:\angular4\weather-service\weather-service\src\assets\vendor.css */"./src/assets/vendor.css");
+module.exports = __webpack_require__(/*! F:\angular4\weather-service\weather-service\src\assets\theme.css */"./src/assets/theme.css");
 
 
 /***/ })
